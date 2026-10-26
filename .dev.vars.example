@@ -1,0 +1,7 @@
+# Cloudflare environment variables for local development
+# Copy this file to .dev.vars and fill in your values
+
+# Node environment
+NODE_ENV=development
+
+# Add your environment variables here
