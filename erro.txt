@@ -1,0 +1,124 @@
+02:13:59.735	Cloning repository...
+02:14:00.652	From https://github.com/ryukistrash/autosim
+02:14:00.653	 * branch            f5fb21bfc7760bab4e965fb3f0c704e99e733fb1 -> FETCH_HEAD
+02:14:00.653	
+02:14:00.720	HEAD is now at f5fb21b first commit
+02:14:00.720	
+02:14:00.777	
+02:14:00.777	Using v2 root directory strategy
+02:14:00.793	Success: Finished cloning repository files
+02:14:02.762	Checking for configuration in a Wrangler configuration file (BETA)
+02:14:02.762	
+02:14:02.763	Found wrangler.toml file. Reading build configuration...
+02:14:02.962	A Wrangler configuration file was found but it does not appear to be valid. Did you mean to use wrangler.toml to configure Pages? If so, then make sure the file is valid and contains the `pages_build_output_dir` property. Skipping file and continuing.
+02:14:03.509	Detected the following tools from environment: nodejs@20.18.0, npm@10.9.9
+02:14:03.510	Installing nodejs 20.18.0
+02:14:04.155	Trying to update node-build... ok
+02:14:04.222	To follow progress, use 'tail -f /tmp/node-build.20261026051404.802.log' or pass --verbose
+02:14:04.279	Downloading node-v20.18.0-linux-x64.tar.gz...
+02:14:04.354	-> https://nodejs.org/dist/v20.18.0/node-v20.18.0-linux-x64.tar.gz
+02:14:06.575	
+02:14:06.576	WARNING: node-v20.18.0-linux-x64 is past its end of life and is now unsupported.
+02:14:06.576	It no longer receives bug fixes or security updates.
+02:14:06.576	
+02:14:06.576	Installing node-v20.18.0-linux-x64...
+02:14:07.129	Installed node-v20.18.0-linux-x64 to /opt/buildhome/.asdf/installs/nodejs/20.18.0
+02:14:07.130	
+02:14:07.793	Installing project dependencies: npm clean-install --progress=false
+02:14:08.781	npm warn EBADENGINE Unsupported engine {
+02:14:08.781	npm warn EBADENGINE   package: '@cloudflare/kv-asset-handler@0.5.0',
+02:14:08.781	npm warn EBADENGINE   required: { node: '>=22.0.0' },
+02:14:08.781	npm warn EBADENGINE   current: { node: 'v20.18.0', npm: '10.8.2' }
+02:14:08.781	npm warn EBADENGINE }
+02:14:08.782	npm warn EBADENGINE Unsupported engine {
+02:14:08.783	npm warn EBADENGINE   package: 'eslint-visitor-keys@5.0.1',
+02:14:08.783	npm warn EBADENGINE   required: { node: '^20.19.0 || ^22.13.0 || >=24' },
+02:14:08.783	npm warn EBADENGINE   current: { node: 'v20.18.0', npm: '10.8.2' }
+02:14:08.783	npm warn EBADENGINE }
+02:14:08.788	npm warn EBADENGINE Unsupported engine {
+02:14:08.788	npm warn EBADENGINE   package: 'wrangler@4.152.0',
+02:14:08.788	npm warn EBADENGINE   required: { node: '>=22.0.0' },
+02:14:08.788	npm warn EBADENGINE   current: { node: 'v20.18.0', npm: '10.8.2' }
+02:14:08.788	npm warn EBADENGINE }
+02:14:08.788	npm warn EBADENGINE Unsupported engine {
+02:14:08.788	npm warn EBADENGINE   package: 'miniflare@5.20261019.2-beta',
+02:14:08.788	npm warn EBADENGINE   required: { node: '>=22.0.0' },
+02:14:08.788	npm warn EBADENGINE   current: { node: 'v20.18.0', npm: '10.8.2' }
+02:14:08.788	npm warn EBADENGINE }
+02:14:08.789	npm warn EBADENGINE Unsupported engine {
+02:14:08.789	npm warn EBADENGINE   package: 'undici@7.29.1',
+02:14:08.789	npm warn EBADENGINE   required: { node: '>=20.18.1' },
+02:14:08.789	npm warn EBADENGINE   current: { node: 'v20.18.0', npm: '10.8.2' }
+02:14:08.789	npm warn EBADENGINE }
+02:14:30.457	
+02:14:30.457	added 408 packages in 22s
+02:14:30.457	
+02:14:30.457	159 packages are looking for funding
+02:14:30.457	  run `npm fund` for details
+02:14:30.503	Executing user command: npm run build
+02:14:30.827	
+02:14:30.827	> autosim-financeira@0.1.0 build
+02:14:30.828	> next build
+02:14:30.828	
+02:14:32.769	⚠ No build cache found. Please configure build caching for faster rebuilds. Read more: https://nextjs.org/docs/messages/no-cache
+02:14:32.778	Attention: Next.js now collects completely anonymous telemetry regarding usage.
+02:14:32.779	This information is used to shape Next.js' roadmap and prioritize features.
+02:14:32.779	You can learn more, including how to opt-out if you'd not like to participate in this anonymous program, by visiting the following URL:
+02:14:32.779	https://nextjs.org/telemetry
+02:14:32.779	
+02:14:32.846	   ▲ Next.js 15.3.9
+02:14:32.846	
+02:14:32.939	   Creating an optimized production build ...
+02:15:17.132	 ✓ Compiled successfully in 39.0s
+02:15:17.139	   Skipping linting
+02:15:17.139	   Checking validity of types ...
+02:15:24.116	   Collecting page data ...
+02:15:26.381	   Generating static pages (0/17) ...
+02:15:27.067	   Generating static pages (4/17) 
+02:15:27.067	   Generating static pages (8/17) 
+02:15:27.163	   Generating static pages (12/17) 
+02:15:27.802	 ✓ Generating static pages (17/17)
+02:15:28.359	   Finalizing page optimization ...
+02:15:28.360	   Collecting build traces ...
+02:15:39.073	
+02:15:39.082	Route (app)                                 Size  First Load JS
+02:15:39.082	┌ ○ /                                    6.53 kB         161 kB
+02:15:39.082	├ ○ /_not-found                            977 B         102 kB
+02:15:39.082	├ ○ /admin/dashboard                     10.7 kB         157 kB
+02:15:39.082	├ ○ /admin/login                         2.15 kB         148 kB
+02:15:39.082	├ ƒ /api/admin/cartas                      155 B         101 kB
+02:15:39.082	├ ƒ /api/admin/images-360                  155 B         101 kB
+02:15:39.082	├ ƒ /api/admin/simulacoes                  155 B         101 kB
+02:15:39.082	├ ƒ /api/admin/upload                      155 B         101 kB
+02:15:39.083	├ ƒ /api/admin/veiculos                    155 B         101 kB
+02:15:39.083	├ ƒ /api/cartas                            155 B         101 kB
+02:15:39.083	├ ƒ /api/cartas-contempladas               155 B         101 kB
+02:15:39.083	├ ƒ /api/solicitacoes                      155 B         101 kB
+02:15:39.083	├ ○ /cartas                              12.7 kB         200 kB
+02:15:39.083	├ ƒ /repasses/[token]                    4.79 kB         157 kB
+02:15:39.083	└ ○ /simulacao                           6.29 kB         193 kB
+02:15:39.083	+ First Load JS shared by all             101 kB
+02:15:39.083	  ├ chunks/4bd1b696-4ed5ccf383d2aaba.js  53.2 kB
+02:15:39.083	  ├ chunks/684-5664f95b48e733ec.js       46.1 kB
+02:15:39.083	  └ other shared chunks (total)          1.92 kB
+02:15:39.083	
+02:15:39.083	
+02:15:39.083	○  (Static)   prerendered as static content
+02:15:39.083	ƒ  (Dynamic)  server-rendered on demand
+02:15:39.084	
+02:15:39.144	Finished
+02:15:39.791	Checking for configuration in a Wrangler configuration file (BETA)
+02:15:39.792	
+02:15:39.793	Found wrangler.toml file. Reading build configuration...
+02:15:39.954	A Wrangler configuration file was found but it does not appear to be valid. Did you mean to use wrangler.toml to configure Pages? If so, then make sure the file is valid and contains the `pages_build_output_dir` property. Skipping file and continuing.
+02:15:39.955	Note: No functions dir at /functions found. Skipping.
+02:15:39.955	Validating asset output directory
+02:15:41.097	
+02:15:41.208	✘ [ERROR] Error: Pages only supports files up to 25 MiB in size
+02:15:41.208	
+02:15:41.208	  cache/webpack/client-production/0.pack is 91.5 MiB in size
+02:15:41.209	
+02:15:41.209	
+02:15:41.251	🪵  Logs were written to "/root/.config/.wrangler/logs/wrangler-2026-10-26_05-15-40_872.log"
+02:15:41.335	Failed to validate assets in the output directory with code: 1
+02:15:42.021	Failed: error occurred while validating assets in your output directory. Check the logs above for more information.

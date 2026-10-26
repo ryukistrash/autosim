@@ -1,0 +1,5 @@
+# Cloudflare Pages - ignorar cache e arquivos desnecessários
+.next/cache
+.next/trace
+node_modules
+.git
