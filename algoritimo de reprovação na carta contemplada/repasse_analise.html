@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"/>
+<title>Repasse — Análise</title>
+<link rel="stylesheet" href="simulador-style.css">
+<style>
+.teaser{
+  text-align:center;
+  color:var(--ink-soft);
+  font-weight:600;
+  margin:1.3rem 0;
+}
+</style>
+</head>
+<body>
+
+  <div class="topbar">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 14l3-3M3 14a9 9 0 1 1 18 0"/><path d="M12 14a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z"/></svg>
+    Simulador de Propostas
+  </div>
+
+  <div class="stepper">
+    <div class="step is-complete"><div class="step-dot">✓</div><div class="step-label">Veículo</div></div>
+    <div class="step-track is-complete"></div>
+    <div class="step is-complete"><div class="step-dot">✓</div><div class="step-label">Cliente</div></div>
+    <div class="step-track is-complete"></div>
+    <div class="step is-active"><div class="step-dot">3</div><div class="step-label">Análise</div></div>
+  </div>
+
+  <div class="shell shell--narrow">
+    <div class="loader" id="spinner">
+      <div class="gauge"></div>
+      <div class="msg" id="mensagem">Gerando análise...</div>
+    </div>
+
+    <div id="resultado" style="display:none">
+      <div class="status-banner status-banner--danger" id="banner">DOCUMENTAÇÃO DESQUALIFICADA</div>
+      <div class="reason-box" id="reason-box"></div>
+      <div id="spinner2-wrap" class="reason-followup"></div>
+    </div>
+  </div>
+
+<script src="simulador-core.js"></script>
+<script>
+let veiculo, cliente;
+try {
+  veiculo = JSON.parse(localStorage.getItem('veiculoRepasseSelecionado') || 'null');
+  cliente = JSON.parse(localStorage.getItem('repasseClienteData') || 'null');
+} catch (e) {
+  veiculo = null; cliente = null;
+}
+
+if (!veiculo || !cliente) {
+  window.location.href = 'repasse_veiculos.html';
+} else {
+
+  setTimeout(() => {
+   try {
+    let causas;
+    if (cliente.tipoRenda === 'autonomo') {
+      causas = avaliarReprovacaoRepasse(
+        cliente.contemDeclaracaoAtual === 'Sim',
+        cliente.declaracaoPF === 'Sim',
+        cliente.declaracaoPJ === 'Sim'
+      );
+    } else {
+      causas = causasReprovacaoCLT();
+    }
+
+    document.getElementById('spinner').style.display = 'none';
+    document.getElementById('resultado').style.display = 'block';
+    document.getElementById('reason-box').innerHTML = `
+      <p>Possíveis causas</p>
+      <ul>${causas.map(c => `<li>${c}</li>`).join('')}</ul>
+    `;
+    document.getElementById('spinner2-wrap').innerHTML = `<p class="teaser">Mas ainda há alternativas para o seu perfil...</p>`;
+
+    // 5s de espera antes do segundo spinner aparecer
+    setTimeout(() => {
+      document.getElementById('spinner2-wrap').innerHTML = `
+        <div class="loader" style="padding:2rem 1rem">
+          <div class="gauge"></div>
+          <div class="msg">Verificando propostas alternativas…</div>
+        </div>
+      `;
+
+      // segundo spinner dura ~25s
+      setTimeout(() => {
+        document.getElementById('spinner2-wrap').innerHTML = `
+          <button class="btn btn-success" onclick="window.location.href='repasse_protocolo.html'">NOVO PROTOCOLO ALTERNATIVO ENCONTRADO</button>
+        `;
+      }, 25000);
+
+    }, 5000);
+   } catch (erro) {
+     console.error('Erro na análise de repasse:', erro);
+     document.getElementById('spinner').innerHTML = `
+       <p style="color:var(--danger);font-weight:700">Algo deu errado ao carregar a análise.</p>
+       <button class="btn btn-outline" onclick="window.location.href='repasse_veiculos.html'">Voltar ao início</button>
+     `;
+   }
+  }, 120000);
+}
+</script>
+
+</body>
+</html>

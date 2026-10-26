@@ -1,0 +1,44 @@
+[
+  {
+    "id": "voyage",
+    "name": "Volkswagen Virtus",
+    "image": "/uploads/cars/1792896467735.jpg",
+    "valor": 18000,
+    "descricao": "Sedã completo e confortável"
+  },
+  {
+    "id": "onix",
+    "name": "Chevrolet Onix",
+    "image": "/uploads/cars/1792896593324.png",
+    "valor": 21000,
+    "descricao": "O preferido dos brasileiros"
+  },
+  {
+    "id": "hb20",
+    "name": "Hyundai HB20",
+    "image": "/uploads/cars/1792896939443.png",
+    "valor": 19000,
+    "descricao": "Design moderno e tecnologia"
+  },
+  {
+    "id": "argo",
+    "name": "Hyundai Creta",
+    "image": "/uploads/cars/1792896847323.png",
+    "valor": 28000,
+    "descricao": "Estilo e performance"
+  },
+  {
+    "id": "kwid",
+    "name": "Toyota Corolla",
+    "image": "/uploads/cars/1792897107497.png",
+    "valor": 36000,
+    "descricao": "Elegância e Performance"
+  },
+  {
+    "id": "gol",
+    "name": "Toyota Hilux",
+    "image": "/uploads/cars/1792897208382.png",
+    "valor": 39000,
+    "descricao": "Potencia e força"
+  }
+]
