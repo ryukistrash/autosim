@@ -229,3 +229,4 @@ Para dúvidas ou problemas, consulte a documentação oficial:
 - [Tailwind CSS v4](https://tailwindcss.com)
 - [Motion](https://motion.dev)
 - [GSAP](https://gsap.com)
+"# autosim" 
