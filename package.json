@@ -8,10 +8,10 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "build:cloudflare": "next build && rm -rf .next/cache .next/trace",
+    "postbuild": "rm -rf .next/cache .next/trace",
     "start": "next start",
-    "lint": "eslint",
-    "wrangler:dev": "wrangler pages dev .next --compatibility-date=2024-01-01",
-    "wrangler:deploy": "wrangler pages deploy .next"
+    "lint": "eslint"
   },
   "dependencies": {
     "@hookform/resolvers": "^6.0.0",
