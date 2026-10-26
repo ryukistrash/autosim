@@ -25,7 +25,7 @@ const schema = z.object({
   nascAno: z.string().min(4, "Ano obrigatório"),
   score: z.string().min(1, "Score obrigatório"),
   analiseRecente: z.string().min(1, "Campo obrigatório"),
-  modalidadesAtivas: z.array(z.string()).default([]),
+  modalidadesAtivas: z.array(z.string()),
   tipoRenda: z.enum(["clt", "autonomo"]),
   rendaContracheque: z.union([z.number(), z.nan()]).optional(),
   profissao: z.string().optional(),
