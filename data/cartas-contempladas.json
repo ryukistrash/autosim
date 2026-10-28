@@ -9,7 +9,8 @@
     "prazo": 58,
     "parcela": 1200,
     "valorTotal": 89600,
-    "dataCadastro": "2024-01-15"
+    "dataCadastro": "2024-01-15",
+    "banco": "Banco do Brasil"
   },
   {
     "codigo": "CCB-002-2024",
@@ -21,7 +22,8 @@
     "prazo": 56,
     "parcela": 1450,
     "valorTotal": 106200,
-    "dataCadastro": "2024-02-10"
+    "dataCadastro": "2024-02-10",
+    "banco": "GFT/Bradesco"
   },
   {
     "codigo": "CCB-003-2024",
@@ -142,5 +144,15 @@
     "parcela": 1400,
     "valorTotal": 100400,
     "dataCadastro": "2024-07-08"
+  },
+  {
+    "codigo": "MVRGYZ6EK7UE",
+    "tipo": "veiculo",
+    "banco": "Magalu",
+    "valorCredito": 220000,
+    "valorEntrada": 22000,
+    "prazo": 22,
+    "parcela": 222,
+    "dataCadastro": "2026-10-28T02:02:35.030Z"
   }
 ]

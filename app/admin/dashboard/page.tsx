@@ -34,6 +34,8 @@ interface Carta {
   banco: string;
   valorCredito: number;
   valorEntrada: number;
+  saldoDevedor: number;
+  valorTotal: number;
   prazo: number;
   parcela: number;
   dataCadastro?: string;
@@ -45,6 +47,9 @@ const BANCOS_DISPONIVEIS = [
   "Banco do Brasil",
   "Promove",
   "Ademicon",
+  "Itaú",
+  "Caixa",
+  "Magalu",
 ];
 
 export default function AdminDashboardPage() {
@@ -486,7 +491,7 @@ export default function AdminDashboardPage() {
                     animate={{ opacity: 1, y: 0 }}
                     className="flex items-center gap-4 p-4 border border-zinc-200 rounded-xl"
                   >
-                    <div className="flex-1 grid grid-cols-1 md:grid-cols-4 gap-4">
+                    <div className="flex-1 grid grid-cols-1 md:grid-cols-5 gap-4">
                       <div>
                         <p className="text-xs text-zinc-500 uppercase font-semibold mb-1">Código</p>
                         <p className="font-mono font-semibold text-zinc-900">{carta.codigo}</p>
@@ -508,6 +513,14 @@ export default function AdminDashboardPage() {
                           R$ {carta.valorCredito.toLocaleString("pt-BR")}
                           <br />
                           <span className="text-xs text-zinc-600">Entrada: R$ {carta.valorEntrada.toLocaleString("pt-BR")}</span>
+                        </p>
+                      </div>
+                      <div>
+                        <p className="text-xs text-zinc-500 uppercase font-semibold mb-1">Saldo / Total</p>
+                        <p className="text-sm text-zinc-900">
+                          R$ {carta.saldoDevedor?.toLocaleString("pt-BR") || "0"}
+                          <br />
+                          <span className="text-xs text-zinc-600">Total: R$ {carta.valorTotal?.toLocaleString("pt-BR") || "0"}</span>
                         </p>
                       </div>
                       <div>
@@ -1004,6 +1017,8 @@ export default function AdminDashboardPage() {
                   banco: formData.get("banco") as string,
                   valorCredito: Number(formData.get("valorCredito")),
                   valorEntrada: Number(formData.get("valorEntrada")),
+                  saldoDevedor: Number(formData.get("saldoDevedor")),
+                  valorTotal: Number(formData.get("valorTotal")),
                   prazo: Number(formData.get("prazo")),
                   parcela: Number(formData.get("parcela")),
                 };
@@ -1060,9 +1075,9 @@ export default function AdminDashboardPage() {
                     required
                     min="0"
                     max="500000"
-                    step="1000"
+                    step="0.01"
                     className="w-full px-4 py-3 border border-zinc-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-600"
-                    placeholder="Ex: 250000"
+                    placeholder="Ex: 250000.50"
                   />
                   <p className="text-xs text-zinc-500 mt-1">
                     Máximo: R$ 500.000
@@ -1079,9 +1094,43 @@ export default function AdminDashboardPage() {
                     defaultValue={editingCarta?.valorEntrada}
                     required
                     min="0"
-                    step="1000"
+                    step="0.01"
                     className="w-full px-4 py-3 border border-zinc-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-600"
-                    placeholder="Ex: 50000"
+                    placeholder="Ex: 50000.75"
+                  />
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-sm font-semibold text-zinc-900 mb-2">
+                    Saldo Devedor (R$) *
+                  </label>
+                  <input
+                    type="number"
+                    name="saldoDevedor"
+                    defaultValue={editingCarta?.saldoDevedor}
+                    required
+                    min="0"
+                    step="0.01"
+                    className="w-full px-4 py-3 border border-zinc-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-600"
+                    placeholder="Ex: 69768.42"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-semibold text-zinc-900 mb-2">
+                    Valor Total (R$) *
+                  </label>
+                  <input
+                    type="number"
+                    name="valorTotal"
+                    defaultValue={editingCarta?.valorTotal}
+                    required
+                    min="0"
+                    step="0.01"
+                    className="w-full px-4 py-3 border border-zinc-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-600"
+                    placeholder="Ex: 89600.98"
                   />
                 </div>
               </div>

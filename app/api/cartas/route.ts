@@ -30,6 +30,10 @@ export async function GET(request: NextRequest) {
 
     // Mapear dados do JSON para o formato esperado pela interface CartaContemplada
     const cartasFormatadas = cartas.map((carta: any) => {
+      // Calcular saldo devedor se não existir
+      const saldoDevedor = carta.saldoDevedor || (carta.parcela * carta.prazo);
+      const valorTotal = carta.valorTotal || (carta.valorEntrada + saldoDevedor);
+
       return {
         codigoCota: carta.codigo,
         categoria: carta.tipo === "imovel" ? "Imóvel" : "Veículo",
@@ -37,11 +41,11 @@ export async function GET(request: NextRequest) {
         entrada: carta.valorEntrada,
         numeroParcelas: carta.prazo,
         valorParcela: carta.parcela,
-        saldoDevedor: carta.saldoDevedor,
-        valorTotal: carta.valorTotal,
+        saldoDevedor: saldoDevedor,
+        valorTotal: valorTotal,
         fundoComum: 0,
         referenciaGarantia: "-",
-        administradora: carta.administradora,
+        administradora: carta.banco || carta.administradora || "N/A",
         status: "Disponível",
       };
     });

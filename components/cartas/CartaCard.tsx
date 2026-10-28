@@ -31,6 +31,10 @@ export function CartaCard({ carta, onSolicitar }: CartaCardProps) {
     "Promove": "/logos/promove.png",
     "Ademicon": "/logos/ademicon.png",
     "GFT/Bradesco": "/logos/gft-bradesco.png",
+    "Itaú": "/logos/itau.png",
+    "Banco do Brasil": "/logos/banco-do-brasil.jpg",
+    "Caixa": "/logos/caixa.png",
+    "Magalu": "/logos/magalu.jpg",
   };
 
   return (
